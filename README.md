@@ -82,7 +82,9 @@ Here take **EMSK2.1 - ARC EM5D** with GNU Toolset and **Linkit 7688 DUO** with A
 		EMBARC_ROOT = ../..
   
 <h3 id="Server">Server</h3>
+
 * **server**
+
 * **mySQL**
  
 <h2 id="code">source code</h2>
