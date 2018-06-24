@@ -3,6 +3,8 @@
 
 * [簡介](#overview)
 * [影片](#video)
+* [架構](#struct)
+  * [硬體](#hardware)
 
 <h2 id="overview">簡介</h2>
 
@@ -12,4 +14,5 @@
 <h3 id="video">影片連結</h3>
 https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
-
+<h4 id="struct">架構</h4>
+<h5 id="hardware">硬體</h5>
