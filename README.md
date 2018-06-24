@@ -27,6 +27,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 * **LCD**
 
 * **Keyboard** 
+* **A lot of LEDS (depend on how big your shelf is)**
 
 由於韌體版本更新問題，EM Starter Kit目前使用的是EMSK21 em5d
 
