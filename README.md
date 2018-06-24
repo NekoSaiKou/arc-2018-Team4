@@ -5,6 +5,7 @@ arc-2018-Team4 承佑賴床是我不隊
 * [Video](#video)
 * [架構](#struct)
   * [Hardware](#hardware)
+  * [Software](#software)
   * [Makefile](#Makefile)
 * [source code](#code)
 
@@ -31,6 +32,11 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 Linkit 7688 DUO的用途為連接網際網路
 
+<h3 id="software">software</h3>
+
+* **Metaware or ARC GNU Toolset** 
+* **Arduino IDE (for linkit 7688 DUO mcu)** 
+* **Serial port terminal, such as putty, tera-term or minicom (for linkit 7688 DUO mpu)**
 
 <h3 id="Makefile">Makefile</h3>
 
