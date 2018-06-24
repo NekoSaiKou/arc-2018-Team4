@@ -40,7 +40,7 @@ Linkit 7688 DUO的用途為連接網際網路
 4. LEDS are connected with ARC EMSK via gpio on **J5 and J6**
 5. Configure your EMSKs with proper core configuration.
 
-<h3 id="software">software</h3>
+<h3 id="software">Software</h3>
 
 * **Metaware or ARC GNU Toolset** 
 * **Arduino IDE (for linkit 7688 DUO mcu)**
