@@ -33,6 +33,13 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 Linkit 7688 DUO的用途為連接網際網路
 
+#### Hardware Connection
+1. The linkit 7688 DUO is connected with ARC EMSK via uart on **J1**
+2. Lcd is connected with ARC EMSK via I2C on **J4**
+3. Keyboard is connected with ARC EMSK via gpio on **J3**
+4. LEDS are connected with ARC EMSK via gpio on **J5 and J6**
+5. Configure your EMSKs with proper core configuration.
+
 <h3 id="software">software</h3>
 
 * **Metaware or ARC GNU Toolset** 
@@ -40,7 +47,7 @@ Linkit 7688 DUO的用途為連接網際網路
 * **Filezilla or other ftp software**
 * **Serial port terminal, such as putty, tera-term or minicom (for linkit 7688 DUO mpu)**
 
-### Run This Application
+#### Run This Application
 
 Modify the settings for connecting to the App, as shown below:
 
