@@ -7,7 +7,6 @@ arc-2018-Team4 承佑賴床是我不隊
   * [Hardware](#hardware)
   * [Software](#software)
   * [Makefile](#Makefile)
-  * [Server](#Server)
 * [source code](#code)
 
 <h2 id="overview">Introduction</h2>
@@ -91,12 +90,6 @@ URL depends on where your mySQL server is.
 		# root dir of embARC
 		#
 		EMBARC_ROOT = ../..
-  
-<h3 id="Server">Server</h3>
-
-* **PHP**
-
-* **mySQL**
  
 <h2 id="code">source code</h2>
 
