@@ -5,7 +5,7 @@ arc-2018-Team4 承佑賴床是我不隊
 * [影片](#video)
 * [架構](#struct)
   * [硬體](#hardware)
-* [source code](#source code)
+* [source code](#code)
 
 <h2 id="overview">簡介</h2>
 
@@ -28,7 +28,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 由於韌體版本更新問題，EM Starter Kit目前使用的是EMSK21 em5d
 
-<h2 id="source code">source code</h2>
+<h2 id="code">source code</h2>
 
 * **src** 
 
