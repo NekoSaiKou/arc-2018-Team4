@@ -30,7 +30,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 * **Keyboard** 
 * **A lot of LEDS (depend on how big your shelf is)**
 
-Due to the obstacle of update, the version of EM Starter Kit is currently EMSK21 em5d.
+Because we have trouble updating the firmware, the version of EM Starter Kit is currently EMSK21 em5d.
 
 Linkit 7688 DUO is meant to build internet connection between client and server side.
 
