@@ -74,6 +74,12 @@ Here take **EMSK2.1 - ARC EM5D** with GNU Toolset and **Linkit 7688 DUO** with A
 
 URL depends on where your mySQL server is.
 
+<h5 id="Makefile">Get ipaddress</h5>
+
+- Take Windows as example:
+
+		command line: ipconfig
+
 <h3 id="Makefile">Makefile</h3>
 
 - Target options about EMSK and toolchain:
