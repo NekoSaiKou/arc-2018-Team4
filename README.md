@@ -3,7 +3,7 @@ arc-2018-Team4 承佑賴床是我不隊
 
 * [Introduction](#overview)
 * [Video](#video)
-* [架構](#struct)
+* [Configuration](#struct)
   * [Hardware](#hardware)
   * [Software](#software)
   * [Makefile](#Makefile)
@@ -18,7 +18,7 @@ arc-2018-Team4 承佑賴床是我不隊
 <h2 id="video">Video</h2>
 https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
-<h2 id="struct">架構</h2>
+<h2 id="struct">Configuration</h2>
 <h3 id="hardware">Hardware</h3>
 
 * **DesignWare ARC EM Starter Kit(EMSK)** 
@@ -100,6 +100,7 @@ URL depends on where your mySQL server is.
 | ------------------------ | -----------------------------------|
 |  src/embARC 201605       | embARC osp we use :version 201605  |
 |  src/linkit7688          | source code for linkit7688DUO      |
+|  src/database            | source code for database (mySQL)   |
 
 * **src/embARC 201605/arc-2018-contest-TEAM4** 
 
@@ -118,4 +119,17 @@ URL depends on where your mySQL server is.
 |  linkit-mpu/arc2018.py     | deal with network in this project                        |
 |  linkit_mcu/               | linkit 7688 DUO arduino-compatible mcu source code folder|
 |  linkit_mcu/linkit_mcu.ino | bridge between **arc emsk** and **linkit MPU**           |
+
+* **src/database/Library** 
+
+|  folder/file                     |            Function                       |
+| -------------------------------- | ------------------------------------------|
+|  ARC2DB.php                      | project's source code folder              |
+|  ARC-Hive Library Information.php| display all information                   |
+|  Book.php                        | display books' status                     |
+|  connect database.php            | project's source code folder              |
+|  Location.php                    | display Location                          |
+|  ReservationRecoed.php           | display reservation history for each books|
+|  WaitingQueue.php                | display current reservation status        |
+
 
