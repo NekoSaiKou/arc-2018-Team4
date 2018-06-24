@@ -64,6 +64,13 @@ Here take **EMSK2.1 - ARC EM5D** with GNU Toolset and **Linkit 7688 DUO** with A
 
 5. Open Filezilla to upload application for linkit 7688 DUO MPU and use putty to run.
 
+
+-Before running application on linkit 7688 DUO MPU , modify following code first:
+
+		url="http://192.168.1.103/testing.php"
+
+URL depends on where your mySQL server is.
+
 <h3 id="Makefile">Makefile</h3>
 
 - Target options about EMSK and toolchain:
