@@ -32,9 +32,6 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 * **src** 
 
-|  folder/file        |            Function           |
-| ------------------- | ------------------------------|
-|  light_driver       |        light(ws2812) driver   |
-|  mpu6050            |        mpu6050 driver         |
-|  rtc                |     rtc(pcf8563t) driver      |
-|  word               |    models of english alphabet |
+|  folder/file         |            Function              |
+| -------------------- | ---------------------------------|
+|  embARC 201605       | embARC osp we use :version 201605|
