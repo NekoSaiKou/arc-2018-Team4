@@ -36,8 +36,25 @@ Linkit 7688 DUO的用途為連接網際網路
 <h3 id="software">software</h3>
 
 * **Metaware or ARC GNU Toolset** 
-* **Arduino IDE (for linkit 7688 DUO mcu)** 
+* **Arduino IDE (for linkit 7688 DUO mcu)**
+* **Filezilla or other ftp software**
 * **Serial port terminal, such as putty, tera-term or minicom (for linkit 7688 DUO mpu)**
+
+### Run This Application
+
+Modify the settings for connecting to the App, as shown below:
+
+Here take **EMSK2.1 - ARC EM5D** with GNU Toolset and **Linkit 7688 DUO** with Arduino IDE and filezilla for example to show how to run this application.
+
+1. We need to use embARC GNU Toolset to load application for EMSK and run.
+
+2. Set linkit to client mode and connect to wifi router.
+
+3. Open Arduino IDE to load application for linkit 7688 DUO MCU and run.
+
+4. Open putty and start a ssh connect with linkit MPU.
+
+5. Open Filezilla to upload application for linkit 7688 DUO MPU and use putty to run.
 
 <h3 id="Makefile">Makefile</h3>
 
