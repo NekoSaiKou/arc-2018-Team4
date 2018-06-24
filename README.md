@@ -32,6 +32,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 * **src** 
 
-|  folder/file         |            Function              |
-| -------------------- | ---------------------------------|
-|  embARC 201605       | embARC osp we use :version 201605|
+|  folder/file         |            Function                |
+| -------------------- | -----------------------------------|
+|  embARC 201605       | embARC osp we use :version 201605  |
+|  linkit7688          | source code for linkit7688DUO      |
