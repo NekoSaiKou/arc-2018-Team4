@@ -16,3 +16,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 <h2 id="struct">架構</h2>
 <h3 id="hardware">硬體</h3>
+**DesignWare ARC EM Starter Kit(EMSK)** 
+**Linkit 7688 DUO** 
+**LCD**
+**Keyboard** 
