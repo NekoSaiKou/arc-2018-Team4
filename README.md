@@ -48,10 +48,10 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 * **src/linkit7688** 
 
-|  folder/file             |            Function                       |
-| ------------------------ | ------------------------------------------|
-|  linkit-mpu/             | linkit 7688 DUO mpu source code folder    |
-|  linkit-mpu/arc2018.py   | deal with network in this project         |
-|  linkit_mcu/             | bridge between **arc emsk** and **linkit MPU**|
-|  TEAM4/makefile          | project's configuration            |
+|  folder/file               |            Function                           |
+| -------------------------- | ------------------------------------------    |
+|  linkit-mpu/               | linkit 7688 DUO mpu source code folder        |
+|  linkit-mpu/arc2018.py     | deal with network in this project             |
+|  linkit_mcu/               | linkit 7688 DUO arduino-compitable mcu source code folder|
+|  linkit_mcu/linkit_mcu.ino | bridge between **arc emsk** and **linkit MPU**|
 
