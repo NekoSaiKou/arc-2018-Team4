@@ -5,6 +5,7 @@ arc-2018-Team4 承佑賴床是我不隊
 * [Video](#video)
 * [架構](#struct)
   * [Hardware](#hardware)
+  * [Makefile](#Makefile)
 * [source code](#code)
 
 <h2 id="overview">Introduction]</h2>
@@ -30,6 +31,27 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 Linkit 7688 DUO的用途為連接網際網路
 
+
+<h3 id="hardware">Hardware</h3>
+
+#### Makefile
+
+- Target options about EMSK and toolchain:
+
+		BOARD ?= emsk
+		BD_VER ?= 21
+		CUR_CORE ?= arcem5d
+		TOOLCHAIN ?= gnu
+
+- The relative series of the root directory, here the path of the Makefile is 
+`./embARC201605/arc-2018-contest-TEAM4/TEAM4`:
+
+		#
+		# root dir of embARC
+		#
+		EMBARC_ROOT = ../..
+  
+  
 <h2 id="code">source code</h2>
 
 * **src** 
