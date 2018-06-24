@@ -7,7 +7,7 @@ command_ext_length = 2
 user_ID_length = 5
 command_total_length = 9
 
-url="http://192.168.1.103/testing.php"
+url="http://192.168.1.103/ARC2DB.php"
 s = None
 def setup():
     global s
