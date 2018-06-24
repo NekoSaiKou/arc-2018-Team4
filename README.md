@@ -52,6 +52,6 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 | ------------------------ | ------------------------------------------|
 |  linkit-mpu/             | linkit 7688 DUO mpu source code folder    |
 |  linkit-mpu/arc2018.py   | deal with network in this project         |
-|  linkit_mcu/             | bridge between **arc emsk** and **linkit**|
+|  linkit_mcu/             | bridge between **arc emsk** and **linkit MPU**|
 |  TEAM4/makefile          | project's configuration            |
 
