@@ -32,9 +32,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 Linkit 7688 DUO的用途為連接網際網路
 
 
-<h3 id="makefile">makefile</h3>
-
-#### Makefile
+<h3 id="Makefile">Makefile</h3>
 
 - Target options about EMSK and toolchain:
 
