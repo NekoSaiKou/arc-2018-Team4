@@ -30,9 +30,9 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 * **Keyboard** 
 * **A lot of LEDS (depend on how big your shelf is)**
 
-由於韌體版本更新問題，EM Starter Kit目前使用的是EMSK21 em5d
+Due to the obstacle of update, the version of EM Starter Kit is currently EMSK21 em5d.
 
-Linkit 7688 DUO的用途為連接網際網路
+Linkit 7688 DUO is meant to build internet connection between client and server side.
 
 #### Hardware Connection
 1. The linkit 7688 DUO is connected with ARC EMSK via uart on **J1**
