@@ -36,3 +36,14 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 | -------------------- | -----------------------------------|
 |  embARC 201605       | embARC osp we use :version 201605  |
 |  linkit7688          | source code for linkit7688DUO      |
+
+* **embARC 201605/arc-2018-contest-TEAM4** 
+
+|  folder/file             |            Function                |
+| ------------------------ | -----------------------------------|
+|  TEAM4                   | project's source code              |
+|  TEAM4/main.h & main.c   | project's main function            |
+|  TEAM4/LCD.h  & LCD.c    | LCD drivers                        |
+|  TEAM4/makefile          | project's configuration            |
+
+
