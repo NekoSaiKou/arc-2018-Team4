@@ -94,7 +94,7 @@ URL depends on where your mySQL server is.
   
 <h3 id="Server">Server</h3>
 
-* **server**
+* **PHP**
 
 * **mySQL**
  
