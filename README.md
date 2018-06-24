@@ -27,6 +27,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 * **Keyboard** 
 
 由於韌體版本更新問題，EM Starter Kit目前使用的是EMSK21 em5d
+
 Linkit 7688 DUO的用途為連接網際網路
 
 <h2 id="code">source code</h2>
