@@ -122,14 +122,14 @@ URL depends on where your mySQL server is.
 
 * **src/database/Library** 
 
-|  folder/file                     |            Function                       |
-| -------------------------------- | ------------------------------------------|
-|  ARC2DB.php                      | project's source code folder              |
-|  ARC-Hive Library Information.php| display all information                   |
-|  Book.php                        | display books' status                     |
-|  connect database.php            | project's source code folder              |
-|  Location.php                    | display Location                          |
-|  ReservationRecoed.php           | display reservation history for each books|
-|  WaitingQueue.php                | display current reservation status        |
+|  folder/file                     |            Function                        |
+| -------------------------------- | -------------------------------------------|
+|  ARC2DB.php                      | project source code for database operation |
+|  ARC-Hive Library Information.php| display all information                    |
+|  Book.php                        | display books' status                      |
+|  connect database.php            | project source code for database connection|
+|  Location.php                    | display available location                 |
+|  ReservationRecoed.php           | display reservation history of each books  |
+|  WaitingQueue.php                | display current reservation status         |
 
 
