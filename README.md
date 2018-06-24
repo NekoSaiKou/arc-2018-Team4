@@ -28,9 +28,10 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 
 由於韌體版本更新問題，EM Starter Kit目前使用的是EMSK21 em5d
 
-<h2 id="source code">driver</h2>
+<h2 id="source code">source code</h2>
 
 * **src** 
+
 |  folder/file        |            Function           |
 | ------------------- | ------------------------------|
 |  light_driver       |        light(ws2812) driver   |
