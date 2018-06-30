@@ -5,12 +5,14 @@
 #define command_length 9
 #define end_of_cmd_index command_length - 1
 
+/*define function code*/
 #define Search 'A'
 #define Borrow 'B'
 #define GiveBack 'C'
 #define New_Reservation 'D'
 #define Cancel_Reservation 'E'
 
+/*define error message*/
 #define E_ARC_OK "M11Z"    /*!< ok */
 #define E_ARC_Trans "M22Z" /*!< invalid cmd */
 #define E_MPU_OK "M33Z"    /*!< ok */
@@ -21,16 +23,17 @@ int LED = 13;
 const byte rxPin = 10;
 const byte txPin = 11;
 
-// set up a new serial object
+// set up a new serial object ->communivate with arc_emsk
 SoftwareSerial mySerial(rxPin, txPin);
 
 void setup()
 {
-  Serial.begin(9600);
-  Serial1.begin(57600); // open internal serial connection to MT7688AN
+  
+  Serial.begin(9600);   /*PC baudrate*/
+  Serial1.begin(57600); /*linkit 7688 duo mpu baud rate*/
   pinMode(rxPin, INPUT);
   pinMode(txPin, OUTPUT);
-  mySerial.begin(9600);
+  mySerial.begin(9600); /*arc baud rate*/
   pinMode(LED, OUTPUT);
   //mySerial.listen();
 }
