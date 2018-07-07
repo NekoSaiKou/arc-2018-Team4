@@ -16,26 +16,52 @@ static char *msg;
 int main(void) {
 	//set up device
 	device_setup();
-	board_delay_ms(5000, 1);
-	msg = "Select Function\r\n";
+	board_delay_ms(2000, 1);
 	Lcd_ClearScreen();
-	Lcd_DisplayString(0, 0, msg);
+	Lcd_DisplayString(0, 0, "A(Search)");
+	Lcd_DisplayString(1, 0, "B(Borrow)");
+	board_delay_ms(2000, 1);
+	Lcd_ClearScreen();
+	Lcd_DisplayString(0, 0, "C(Return)");
+	Lcd_DisplayString(1, 0, "D(Reservation)");
 
 	while (1) {
-		board_delay_ms(5000, 1);
-		port_C_led->gpio_write(0x0, J5_PIN1to4_MASK_C);
-		port_A_led->gpio_write(0x0, J56_MASK_A);
+		board_delay_ms(2000, 1);
 		Lcd_ClearScreen();
-		Lcd_DisplayString(0, 0, "A(Search),B(Borrow)");
-		Lcd_DisplayString(1, 0, "C(Return),D(Reservation)");
+		port_C_led->gpio_write(0x0,
+				(void *) (J5_PIN1to4_MASK_C));
+		port_A_led->gpio_write(0x0,
+				(void *) (J56_MASK_A));
+		Lcd_DisplayString(0, 0, "Select Function\r\n");
+		Lcd_DisplayString(1, 0, "A,B,C,D   *:help");
 
+		/*we will  use the string below later*/
+		char cmd[CMD_Length] = { 0 };
+		for (int base = 0; base < CMD_Length; base++) {
+			cmd[base] = ' ';
+		} //Your ID:________
+		cmd[CMD_Length - 1] = 'Z';
+
+		char book[16] = "BOOK ID:";
+		for (int base = 0; base < Book_ID_Length; base++) {
+			book[8 + base] = '_';
+		} //BOOK ID:________
+
+		char user[16] = "Your ID:";
+		for (int base = 0; base < User_ID_Length; base++) {
+			user[8 + base] = '_';
+		} //Your ID:________
+
+		char location[16] = "Location:";
+		for (int base = 0; base < location_length; base++) {
+			location[9 + base] = '_';
+		} //Location:________
+
+		/*GET WHAT USER WANT TO DO*/
 		int function = btn();
 		switch (function) {
 		case Search: {
-			char cmd[CMD_Length] = { 0 };
-			char book[16] = "BOOK ID:";
-			cmd[0] = keyboard_Convert[Search];
-			Lcd_DisplayString(0, 0, "Function: Search \n\r");
+			Lcd_DisplayString(0, 0, "Search \n\r");
 			Lcd_DisplayString(1, 0, book);
 
 			/*Enter Book ID*/
@@ -45,26 +71,13 @@ int main(void) {
 				book[8 + count] = keyboard_Convert[input];
 				Lcd_DisplayString(1, 0, book);
 			}
-
-			for (int count = Book_ID_Length; count < CMD_Length - 2; count++) {
-				cmd[count + 1] = ' ';
-			}
-
-			cmd[CMD_Length - 1] = 'Z';
-			Console->uart_write("\r\n", 2);
-			Console->uart_write(cmd, CMD_Length);
-			/*send data to linkit 7688 MPU*/
-			linkit->uart_write(cmd, CMD_Length);
+			sendcmd(cmd, function);
 			/*get response*/
-			rev(Search);
+			rev(function);
 			break;
 		}
 		case Borrow: {
-			char cmd[CMD_Length] = { 0 };
-			char book[16] = "BOOK ID:";
-			char user[16] = "Your ID:";
-			cmd[0] = keyboard_Convert[Borrow];
-			Lcd_DisplayString(0, 0, "Function: Borrow \n\r");
+			Lcd_DisplayString(0, 0, "Borrow \n\r");
 			Lcd_DisplayString(1, 0, book);
 			/*Enter Book ID*/
 			for (int count = 0; count < Book_ID_Length; count++) {
@@ -82,24 +95,14 @@ int main(void) {
 				user[8 + count] = keyboard_Convert[input];
 				Lcd_DisplayString(0, 0, user);
 			}
-
-			cmd[CMD_Length - 1] = 'Z';
-			Console->uart_write("\r\n", 2);
-			Console->uart_write(cmd, CMD_Length);
-			/*send data to linkit 7688 MPU*/
-			linkit->uart_write(cmd, CMD_Length);
+			sendcmd(cmd, function);
 			/*get response*/
-			rev(Borrow);
+			rev(function);
 			break;
 		}
 		case Giveback: {
-			char cmd[CMD_Length] = { 0 };
-			char book[16] = "BOOK ID:";
-			char location[16] = "Location:";
-			cmd[0] = keyboard_Convert[Giveback];
-			Lcd_DisplayString(0, 0, "Function: Giveback \n\r");
+			Lcd_DisplayString(0, 0, "Giveback \n\r");
 			Lcd_DisplayString(1, 0, book);
-			printf("\n");
 			/*Enter Book ID*/
 			for (int count = 0; count < Book_ID_Length; count++) {
 				int input = btn();
@@ -125,44 +128,39 @@ int main(void) {
 					Lcd_DisplayString(0, 0, location);
 				}
 			}
-			for (int count = Book_ID_Length + location_length;
-					count < CMD_Length - 2; count++) {
-				cmd[count + 1] = ' ';
-			}
-			cmd[CMD_Length - 1] = 'Z';
-			Console->uart_write("\r\n", 2);
-			Console->uart_write(cmd, CMD_Length);
-			/*send data to linkit 7688 MPU*/
-			linkit->uart_write(cmd, CMD_Length);
+			sendcmd(cmd, function);
 			/*get response*/
-			rev(Giveback);
+			rev(function);
+			break;
+		}
+		case help: {
+			Lcd_ClearScreen();
+			Lcd_DisplayString(0, 0, "A(Search)");
+			Lcd_DisplayString(1, 0, "B(Borrow)");
+			board_delay_ms(2000, 1);
+			Lcd_ClearScreen();
+			Lcd_DisplayString(0, 0, "C(Return)");
+			Lcd_DisplayString(1, 0, "D(Reservation)");
 			break;
 		}
 		case Reservation: {
-			int sub_func = 0;
-			char cmd[CMD_Length] = { 0 };
-			char book[16] = "BOOK ID:";
-			char user[16] = "Your ID:";
-
 			Lcd_DisplayString(0, 0, "A:New");
 			Lcd_DisplayString(1, 0, "B:Cancel");
 			do {
 				int res_function = btn();
 				if (res_function == New_Reservation) {
-					sub_func = NewReservation;
+					function = NewReservation;
 					Lcd_ClearScreen();
 					Lcd_DisplayString(0, 0, "A:New");
 					msg = "New_Reservation \n\r";
 					Console->uart_write(msg, strlen(msg));
-					cmd[0] = 'D';
 					break;
 				} else if (res_function == Cancel_Reservation) {
-					sub_func = CancelReservation;
+					function = CancelReservation;
 					Lcd_ClearScreen();
 					Lcd_DisplayString(0, 0, "B:Cancel");
 					msg = "Cancel_Reservation \n\r";
 					Console->uart_write(msg, strlen(msg));
-					cmd[0] = 'E';
 					break;
 				} else {
 					Lcd_DisplayString(0, 0, "A:New");
@@ -187,13 +185,9 @@ int main(void) {
 				Lcd_DisplayString(0, 0, user);
 			}
 
-			cmd[CMD_Length - 1] = 'Z';
-			Console->uart_write("\r\n", 2);
-			Console->uart_write(cmd, CMD_Length);
-			/*send data to linkit 7688 MPU*/
-			linkit->uart_write(cmd, CMD_Length);
+			sendcmd(cmd, function);
 			/*get response*/
-			rev(sub_func);
+			rev(function);
 			break;
 		}
 		default:
@@ -270,7 +264,7 @@ void device_setup(void) {
 	port_A_led = keyboard_col;
 
 	/*LCD setup*/
-	LCD->iic_open( DEV_MASTER_MODE, IIC_SPEED_HIGH);
+	LCD->iic_open(DEV_MASTER_MODE, IIC_SPEED_HIGH);
 	LCD->iic_control(IIC_CMD_MST_SET_TAR_ADDR, CONV2VOID(LCD_Slave_Address));
 	Lcd_Init(LCD);
 	Lcd_DisplayOnOff(1);  //display on
@@ -281,15 +275,15 @@ void device_setup(void) {
 	Lcd_DisplayString(1, 0, "Hello My Friend");
 	//open Console Device
 	led->gpio_open(0x1FF);
-	Console->uart_open( UART_BAUDRATE_115200);
-	linkit->uart_open( UART_BAUDRATE_9600);
+	Console->uart_open(UART_BAUDRATE_115200);
+	linkit->uart_open(UART_BAUDRATE_9600);
 	led->gpio_write(0x055, 0x1FF);
 
 	/*set up for 4*4 keyboard*/
 	keyboard_row->gpio_close(); /* opened before now close it */
 	keyboard_col->gpio_close(); /* opened before now close it */
 	keyboard_row->gpio_open(J3_PIN1to4_MASK_C | J5_PIN1to4_MASK_C);
-	keyboard_col->gpio_open(J3_PIN7to10_MASK_A |J56_MASK_A);
+	keyboard_col->gpio_open(J3_PIN7to10_MASK_A | J56_MASK_A);
 	keyboard_row->gpio_control(GPIO_CMD_SET_BIT_DIR_INPUT,
 			(void *) (J3_PIN1to4_MASK_C));
 	keyboard_col->gpio_control(GPIO_CMD_SET_BIT_DIR_INPUT,
@@ -310,9 +304,21 @@ void mux_setup(void) {
 	mux_regs = (MUX_REG *) (PERIPHERAL_BASE | REL_REGBASE_PINMUX);
 	mux_init(mux_regs);
 	set_pmod_mux(mux_regs,
-			PM1_UR_UART_0 | PM3_GPIO_AC | PM4_I2C_GPIO_D | PM5_UR_GPIO_C
-					| PM5_LR_GPIO_A | PM6_LR_GPIO_A);
+	PM1_UR_UART_0 | //PM1 for linkit7688DUO
+			PM3_GPIO_AC |   //PM3 for LCD
+			PM4_I2C_GPIO_D |   //PM4 for keyboard
+			PM5_UR_GPIO_C | //PM5 for LEDS
+			PM5_LR_GPIO_A | //PM5 for LEDS
+			PM6_LR_GPIO_A); //PM6 for LEDS
+
 	set_uart_map(mux_regs, 0x9c);
+}
+void sendcmd(char cmd[], int function) {
+	cmd[0] = keyboard_Convert[function];
+	Console->uart_write("\r\n", 2);
+	Console->uart_write(cmd, CMD_Length);
+	/*send data to linkit 7688 MPU*/
+	linkit->uart_write(cmd, CMD_Length);
 }
 void rev(int operation) {
 	uint64_t start_us;
@@ -326,7 +332,7 @@ void rev(int operation) {
 			board_delay_ms(10, 1);
 			linkit->uart_read(&rev[count], available);
 			count += available;
-			if (rev[0] == 'M') {
+			if (rev[0] == 'M') { // Error Message is started with character 'M'
 				sprintf(msg, "Error number:%c\n\r", rev[1]);
 				Lcd_DisplayString(0, 0, msg);
 				linkit->uart_control(UART_CMD_GET_RXAVAIL, &available);
@@ -345,6 +351,7 @@ void rev(int operation) {
 					strng[tem] = rev[tem];
 					tem++;
 				}
+
 				board_delay_ms(1, 1);
 				/*classify response*/
 				if (rev[0] == 'E') {
@@ -419,9 +426,8 @@ void rev(int operation) {
 					Lcd_DisplayString(0, 0, "Success!!");
 				} else {
 					if (operation == Search) {
-						/**************insert code here*****************/
+
 						int locate = rev[2] - '1';
-						printf("\n%c %d\n", rev[2], locate);
 						if (rev[0] == '1') {
 							port_A_led->gpio_write(0x1000000 << locate,
 							J56_MASK_A);

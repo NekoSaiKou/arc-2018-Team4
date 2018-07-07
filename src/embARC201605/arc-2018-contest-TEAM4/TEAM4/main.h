@@ -46,7 +46,8 @@ const static char keyboard_Convert[] = {
 	'1', '2', '3', 'A',
 	'4', '5', '6', 'B',
 	'7', '8', '9', 'C',
-	'*', '0', '#', 'D'
+	'*', '0', '#', 'D',
+	'E','F'
 };
 /***************************User Function********************************/
 #define Book_ID_Length  2
@@ -54,17 +55,19 @@ const static char keyboard_Convert[] = {
 #define Func_ID_Length  2
 #define User_ID_Length  5
 #define CMD_Length 9//(FUNC)+(BOOKID)+(USERID)+Z
-#define Search 		3
-#define Borrow 		7
-#define Giveback 	11
-#define Reservation 15
+#define Search 		3  //A
+#define Borrow 		7  //B
+#define Giveback 	11 //C
+#define help		12
+#define Reservation 15 //D
 #define NewReservation 16
 #define CancelReservation 17
-#define New_Reservation 3
-#define Cancel_Reservation 7
+#define New_Reservation 3    //A
+#define Cancel_Reservation 7 //B
 
 /***************************Fun Declaration******************************/
 int btn(void);
 void device_setup(void);
 void mux_setup(void);
+void sendcmd(char cmd[], int function);
 void rev(int operation);

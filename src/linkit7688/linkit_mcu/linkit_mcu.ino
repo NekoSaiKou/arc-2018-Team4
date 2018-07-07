@@ -44,7 +44,7 @@ void loop()
     /*Read Data from ARC EMSK*/
     int strlength = mySerial.available();
     Serial.println(strlength);
-    char uart_text[command_length];
+    char uart_text[command_length] = {0};
     for (int i = 0; i < command_length; i++)
     {
       uart_text[i] = ' ';
@@ -64,11 +64,11 @@ void loop()
       case New_Reservation:
       case Cancel_Reservation:
       {
-        Serial.println(uart_text);
+        Serial.print(uart_text);
         /*send data to linkit 7688 MPU*/
         Serial1.write(uart_text, command_length);
         /*Wait and GET RESPONSE FORM LINKIT 7688 MPU*/
-        char rev[6] = "     ";
+        char rev[6] = {0};
         int count = 0;
         unsigned long current_time = millis();
         while (millis() - current_time < 5000)
@@ -78,9 +78,9 @@ void loop()
             delay(10);
             /*Z is end of data from mySQL*/
             rev[count] = Serial1.read();
-            if (rev[0] == '0')
+            if (rev[0] == '0')//mySQL server no response
             {
-              count = -1; //indicateend of transmissting
+              count = -1; //indicate end of transmissting
               Serial.println(rev);
               delay(10);
               mySerial.write(E_MPU_Trans);
