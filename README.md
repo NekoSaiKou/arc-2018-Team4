@@ -35,7 +35,7 @@ https://v.youku.com/v_show/id_XMzY3OTI0MDg3Ng==.html?spm=a2h3j.8428770.3416059.1
 * **Keyboard** 
 * **A lot of LEDS (depend on how big your shelf is)**
 
-Because we have trouble updating the firmware, the version of EM Starter Kit is currently EMSK21 em5d.
+The version of EM Starter Kit is currently EMSK22 em7d.
 
 Linkit 7688 DUO is meant to build internet connection between client and server side.
 
@@ -53,11 +53,13 @@ Linkit 7688 DUO is meant to build internet connection between client and server 
 * **Filezilla or other ftp software**
 * **Serial port terminal, such as putty, tera-term or minicom (for linkit 7688 DUO mpu)**
 
+In this project, we use embarc osp 2017.12 and arc gnu tool chain 2017.09
+
 #### Run This Application
 
 Modify the settings for connecting to the App, as shown below:
 
-Here take **EMSK2.1 - ARC EM5D** with GNU Toolset and **Linkit 7688 DUO** with Arduino IDE and filezilla for example to show how to run this application.
+Here take **EMSK2.2 - ARC EM7D** with GNU Toolset and **Linkit 7688 DUO** with Arduino IDE and filezilla for example to show how to run this application.
 
 1. We need to use embARC GNU Toolset to load application for EMSK and run.
 
@@ -85,8 +87,8 @@ URL depends on where your mySQL server is.
 - Target options about EMSK and toolchain:
 
 		BOARD ?= emsk
-		BD_VER ?= 21
-		CUR_CORE ?= arcem5d
+		BD_VER ?= 22
+		CUR_CORE ?= arcem7d
 		TOOLCHAIN ?= gnu
 
 - The relative series of the root directory, here the path of the Makefile is 
@@ -103,18 +105,18 @@ URL depends on where your mySQL server is.
 
 |  folder/file             |            Function                |
 | ------------------------ | -----------------------------------|
-|  src/embARC 201605       | embARC osp we use :version 201605  |
+|  src/arc                 | source code for EMBARC	        |
 |  src/linkit7688          | source code for linkit7688DUO      |
 |  src/database            | source code for database (mySQL)   |
 
-* **src/embARC 201605/arc-2018-contest-TEAM4** 
+* **src/arc/** 
 
 |  folder/file             |            Function                |
 | ------------------------ | -----------------------------------|
-|  TEAM4/                  | project's source code folder       |
-|  TEAM4/main.h & main.c   | project's main function            |
-|  TEAM4/LCD.h  & LCD.c    | LCD drivers                        |
-|  TEAM4/makefile          | project's configuration            |
+|  team4/                  | project's source code folder       |
+|  team4/main.h & main.c   | project's main function            |
+|  team4/LCD.h  & LCD.c    | LCD drivers                        |
+|  team4/makefile          | project's configuration            |
 
 * **src/linkit7688** 
 
