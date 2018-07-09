@@ -53,7 +53,7 @@ Linkit 7688 DUO is meant to build internet connection between client and server 
 * **Filezilla or other ftp software**
 * **Serial port terminal, such as putty, tera-term or minicom (for linkit 7688 DUO mpu)**
 
-In this project, we use embarc osp 2017.12 and arc gnu tool chain 2017.09
+In this project, we use **embarc osp 2017.12** and **arc gnu tool chain 2017.09**
 
 #### Run This Application
 
@@ -74,7 +74,7 @@ Here take **EMSK2.2 - ARC EM7D** with GNU Toolset and **Linkit 7688 DUO** with A
 
 		url="http://192.168.1.103//ARC2DB.php"
 
-URL depends on where your mySQL server is.
+**URL depends on where your mySQL server is.**
 
 <h5 id="Makefile">Get ipaddress</h5>
 
