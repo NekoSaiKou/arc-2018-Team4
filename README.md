@@ -91,8 +91,7 @@ Here take **EMSK2.2 - ARC EM7D** with GNU Toolset and **Linkit 7688 DUO** with A
 		CUR_CORE ?= arcem7d
 		TOOLCHAIN ?= gnu
 
-- The relative series of the root directory, here the path of the Makefile is 
-`./embARC201605/arc-2018-contest-TEAM4/TEAM4`:
+- The relative series of the root directory, depends on your structure. 
 
 		#
 		# root dir of embARC
